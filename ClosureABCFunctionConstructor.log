@@ -1,0 +1,574 @@
+function CLASS(name,s){
+    this.name = name;
+    this.s=s;
+}
+undefined
+var c = new CLASS('dd','ff);
+VM360:1 Uncaught SyntaxError: Invalid or unexpected token
+var c = new CLASS('dd','ff');
+undefined
+c
+CLASS {name: "dd", s: "ff"}
+typeof(c);
+"object"
+typeof(CLASS)
+"function"
+typeof(Object)
+"function"
+typeof(function)
+VM484:1 Uncaught SyntaxError: Unexpected token )
+typeof(Function)
+"function"
+typeof(window)
+"object"
+function Circle(r){
+ this.r = r;
+ this.draw=function(){console.log('draw...')}
+}
+undefined
+const circle = new Circle(5);
+undefined
+circle
+Circle {r: 5, draw: ƒ}draw: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1350:3[[Scopes]]: Scopes[2]__proto__: Object__proto__: ƒ ()[[FunctionLocation]]: VM1350:3[[Scopes]]: Scopes[2]r: 5__proto__: Objectconstructor: ƒ Circle(r)__proto__: Object
+typeof(circle)
+"object"
+typeof(Circle)
+"function"
+class Rectange(x,y){
+this.x=x;
+this.y=y;
+this.area=function(){console.log(x*y);}}
+VM1744:1 Uncaught SyntaxError: Unexpected token (
+class Rectange(x,y){
+this.x=x;
+this.y=y;
+this.area=function(){
+console.log(x*y)
+}}
+VM1799:1 Uncaught SyntaxError: Unexpected token (
+class Rectange{
+constructor(x,y){
+this.x=x;
+this.y=y;
+this.area=function(){
+console.log(x*y)
+}}
+}
+undefined
+const rectangle = new Rectange(4,5);
+undefined
+rectangle
+Rectange {x: 4, y: 5, area: ƒ}area: ƒ ()x: 4y: 5__proto__: Object
+rectangle.area
+ƒ (){
+console.log(x*y)
+}
+rectangle.area()
+VM2028:6 20
+undefined
+typeof(Rectange)
+"function"
+typeof(rectangle)
+"object"
+Window
+ƒ Window() { [native code] }
+typeof(Window)
+"function"
+instanceof(window)
+VM2430:1 Uncaught SyntaxError: Unexpected token instanceof
+instanceof(Object)
+VM2586:1 Uncaught SyntaxError: Unexpected token instanceof
+instanceof(object)
+VM2618:1 Uncaught SyntaxError: Unexpected token instanceof
+window instanceof Window
+true
+window instanceof Object
+true
+window instanceof Function
+false
+rectangle instanceof Rectange
+
+
+true
+rectangle instanceof Object
+
+
+true
+rectangle instanceof Function
+
+
+false
+rectangle instanceof Window
+
+
+false
+rectangle instanceof window
+
+
+VM2916:1 Uncaught TypeError: Right-hand side of 'instanceof' is not callable
+    at <anonymous>:1:11
+(anonymous) @ VM2916:1
+var s;
+undefined
+var s=0;
+undefined
+s
+0
+f;
+VM3307:1 Uncaught ReferenceError: f is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3307:1
+.
+VM3734:1 Uncaught SyntaxError: Unexpected token .
+..
+VM3740:1 Uncaught SyntaxError: Unexpected token .
+...
+c =0;
+VM3758:2 Uncaught SyntaxError: Rest parameter may not have a default initializer
+...
+c
+VM3769:1 Uncaught SyntaxError: Unexpected token ...
+...[23]
+c
+VM3782:1 Uncaught SyntaxError: Invalid destructuring assignment target
+...[23]
+VM3791:1 Uncaught SyntaxError: Invalid destructuring assignment target
+var s=...;
+VM3813:1 Uncaught SyntaxError: Unexpected token ...
+funtion add(args){console.log('Addition = ',args.length)}
+VM4254:1 Uncaught SyntaxError: Unexpected identifier
+funtion add(args){console.log('Addition = ',args.length())}
+VM4269:1 Uncaught SyntaxError: Unexpected identifier
+funtion add(args){console.log('Addition = ',args.length());}
+VM4279:1 Uncaught SyntaxError: Unexpected identifier
+funtion add(args){
+console.log('Addition = ',args);
+}
+VM4427:1 Uncaught SyntaxError: Unexpected identifier
+function add(args){
+console.log('Addition = ',args.length);
+}
+undefined
+add(a);
+VM4517:1 Uncaught ReferenceError: a is not defined
+    at <anonymous>:1:5
+(anonymous) @ VM4517:1
+add('a');
+VM4485:2 Addition =  1
+undefined
+add('12');
+VM4485:2 Addition =  2
+undefined
+add(true);
+VM4485:2 Addition =  undefined
+undefined
+add(false);
+VM4485:2 Addition =  undefined
+undefined
+add('23ddf);
+VM4625:1 Uncaught SyntaxError: Invalid or unexpected token
+add('23ddf');
+VM4485:2 Addition =  5
+undefined
+console.dir(add);
+VM4684:1 ƒ add(args)arguments: nullcaller: nulllength: 1name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM4485:1[[Scopes]]: Scopes[2]
+undefined
+var pokemon = {
+    firstname: 'Pika',
+    lastname: 'Chu ',
+    getPokeName: function() {
+        var fullname = this.firstname + ' ' + this.lastname;
+        return fullname;
+    }
+};
+
+var pokemonName = function() {
+    console.log(this.getPokeName() + 'I choose you!');
+};
+
+undefined
+var logPokeMon = pokemonName.bind(pokemon);
+undefined
+localStorage
+VM7394:1 Uncaught DOMException: Failed to read the 'localStorage' property from 'Window': Access is denied for this document.
+    at <anonymous>:1:1
+(anonymous) @ VM7394:1
+localStorage()
+VM7405:1 Uncaught DOMException: Failed to read the 'localStorage' property from 'Window': Access is denied for this document.
+    at <anonymous>:1:1
+(anonymous) @ VM7405:1
+logPokeMon;
+ƒ () {
+    console.log(this.getPokeName() + 'I choose you!');
+}
+logPokeMon();
+VM7308:11 Pika Chu I choose you!
+undefined
+var pokemonName2= function(a,b){
+ console.log(this.pokemon(),' a = ',a,' b = ',b);
+}
+undefined
+pokemonName2()
+VM7736:2 Uncaught TypeError: this.pokemon is not a function
+    at pokemonName2 (<anonymous>:2:19)
+    at <anonymous>:1:1
+pokemonName2 @ VM7736:2
+(anonymous) @ VM7760:1
+var lofPokMon2 = pokemonName2(5,6);
+VM7736:2 Uncaught TypeError: this.pokemon is not a function
+    at pokemonName2 (<anonymous>:2:19)
+    at <anonymous>:1:18
+pokemonName2 @ VM7736:2
+(anonymous) @ VM7830:1
+var lofPokMon2 = pokemonName2.call(pokemon,5,6);
+VM7736:2 Uncaught TypeError: this.pokemon is not a function
+    at Object.pokemonName2 (<anonymous>:2:19)
+    at <anonymous>:1:31
+pokemonName2 @ VM7736:2
+(anonymous) @ VM7910:1
+var lofPokMon2 = pokemonName2.call(pokemon,5,6);
+VM7736:2 Uncaught TypeError: this.pokemon is not a function
+    at Object.pokemonName2 (<anonymous>:2:19)
+    at <anonymous>:1:31
+pokemonName2 @ VM7736:2
+(anonymous) @ VM7997:1
+var pokemonName2= function(a,b){
+ console.log(this.getPokeName(),' a = ',a,' b = ',b);
+}
+undefined
+var lofPokMon2 = pokemonName2.call(pokemon,5,6);
+VM8167:2 Pika Chu   a =  5  b =  6
+undefined
+var lofPokMon2 = pokemonName2.apply(pokemon,5,6);
+VM8216:1 Uncaught TypeError: CreateListFromArrayLike called on non-object
+    at <anonymous>:1:31
+(anonymous) @ VM8216:1
+var lofPokMon2 = pokemonName2.apply(pokemon,[5,6]);
+VM8167:2 Pika Chu   a =  5  b =  6
+undefined
+var counter = 1;
+        function callMeBack(value) {
+            console.log(" I will call after the Big Task ", value)
+                // display();
+        }
+        function process() {
+            console.log("Process Start....");
+            bigTask(callMeBack);
+            for (i = 1; i <= 10; i++) {
+                console.log(" I is " + i);
+            }
+        }
+        function bigTask(fn) {
+            x = show();
+            setTimeout(() => {
+                console.log("Big Task Start....");
+                for (let i = 1; i <= 1000000; i++) {
+                    for (let j = 1; j <= 1000000; j++) {
+                    }
+                }
+                console.log("Big Task End....");
+                fn(1000);
+                // return 1000;
+            }, 10000);
+        }
+
+undefined
+bigTask(callMeBack);
+VM9363:14 Uncaught ReferenceError: show is not defined
+    at bigTask (<anonymous>:14:13)
+    at <anonymous>:1:1
+bigTask @ VM9363:14
+(anonymous) @ VM9399:1
+var counter = 1;
+        function callMeBack(value) {
+            console.log(" I will call after the Big Task ", value)
+                // display();
+        }
+        function process() {
+            console.log("Process Start....");
+            bigTask(callMeBack);
+            for (i = 1; i <= 10; i++) {
+                console.log(" I is " + i);
+            }
+        }
+        function bigTask(fn) {
+//             x = show(
+            setTimeout(() => {
+                console.log("Big Task Start....");
+                for (let i = 1; i <= 1000000; i++) {
+                    for (let j = 1; j <= 1000000; j++) {
+                    }
+                }
+                console.log("Big Task End....");
+                fn(1000);
+                // return 1000;
+            }, 10000);
+        }
+
+undefined
+bigTask(callMeBack);
+undefined
+VM9418:16 Big Task Start....
+VM9418:21 Big Task End....
+VM9418:3  I will call after the Big Task  1000
+var s=1;
+undefined
+function closure(){
+ console.log('s = ',s++);
+}
+undefined
+closure()
+VM9933:2 s =  1
+undefined
+closure()
+VM9933:2 s =  2
+undefined
+closure()
+VM9933:2 s =  3
+undefined
+closure()
+VM9933:2 s =  4
+undefined
+function closure(){
+ s=0;
+ console.log('s = ',s++);
+}
+undefined
+closure()
+VM10007:3 s =  0
+undefined
+closure()
+VM10007:3 s =  0
+undefined
+closure()
+VM10007:3 s =  0
+undefined
+closure()
+VM10007:3 s =  0
+undefined
+function closure2(){
+ c=0;
+ function plus(){console.log('p = ',p);}
+}
+undefined
+closure2()
+undefined
+closure2().plus()
+VM10317:1 Uncaught TypeError: Cannot read property 'plus' of undefined
+    at <anonymous>:1:11
+(anonymous) @ VM10317:1
+closure2.plus()
+VM10333:1 Uncaught TypeError: closure2.plus is not a function
+    at <anonymous>:1:10
+(anonymous) @ VM10333:1
+closure2()
+undefined
+closure2
+ƒ closure2(){
+ c=0;
+ function plus(){console.log('p = ',p);}
+}
+closure2.apply(f);
+VM10463:1 Uncaught ReferenceError: f is not defined
+    at <anonymous>:1:16
+(anonymous) @ VM10463:1
+closure2.apply(plus);
+VM10493:1 Uncaught ReferenceError: plus is not defined
+    at <anonymous>:1:16
+(anonymous) @ VM10493:1
+function closure2(){
+ p=0;
+ function plus(){console.log('p = ',p++);}
+ plus();
+ return p;
+}
+undefined
+closure2()
+VM10706:3 p =  0
+1
+closure2()
+VM10706:3 p =  0
+1
+closure2()
+VM10706:3 p =  0
+1
+var p=0;
+function closure2(){
+ 
+ function plus(){console.log('p = ',p++);}
+ plus();
+ return p;
+}
+undefined
+closure2()
+VM10801:4 p =  0
+1
+closure2()
+VM10801:4 p =  1
+2
+closure2()
+VM10801:4 p =  2
+3
+closure2()
+VM10801:4 p =  3
+4
+closure2()
+VM10801:4 p =  4
+5
+
+function closure2(){
+var p=0; 
+ function plus(){console.log('p = ',p++);}
+ return plus();
+}
+undefined
+closure2()
+VM10988:4 p =  0
+undefined
+VM10988:4 p =  0
+closure2()
+VM10988:4 p =  0
+undefined
+VM10988:4 p =  0
+closure2()
+VM10988:4 p =  0
+undefined
+3VM10988:4 p =  0
+
+function closure2(){
+ var p=0; 
+ function plus(){console.log('p = ',p++); return p;}
+ return plus();
+}
+undefined
+closure2()
+VM11198:4 p =  0
+1
+VM11198:4 p =  0
+closure2()
+VM11198:4 p =  0
+1
+VM11198:4 p =  0
+closure2()
+VM11198:4 p =  0
+1
+3VM11198:4 p =  0
+
+function closure2(){
+ var p=0; 
+ function plus(){console.log('p = ',p++); return p;}
+ return plus;
+}
+undefined
+closure2()
+ƒ plus(){console.log('p = ',p++); return p;}
+closure2()()
+VM11237:4 p =  0
+1
+VM11237:4 p =  0
+closure2()()
+VM11237:4 p =  0
+1
+VM11237:4 p =  0
+closure2()()
+VM11237:4 p =  0
+1
+VM11237:4 p =  0
+
+function closure2(){
+ var p=0; 
+ 
+ return function (){console.log('p = ',p++); return p;};
+}
+undefined
+closure2()()
+VM11326:5 p =  0
+1
+VM11326:5 p =  0
+closure2()()
+VM11326:5 p =  0
+1
+VM11326:5 p =  0
+closure2()()
+VM11326:5 p =  0
+1
+VM11326:5 p =  0
+
+function closure2(){
+ var p=0; 
+ 
+ return function (){console.log('p = ',p++); return p++;};
+}
+undefined
+closure2()()
+VM11392:5 p =  0
+1
+VM11392:5 p =  0
+closure2()()
+VM11392:5 p =  0
+1
+
+function closure2(){
+ var p=0; 
+ 
+ return function (){ return p++;};
+}
+undefined
+closure2()()
+0
+closure2()()
+0
+closure2()()
+0
+
+function closure2(){
+ var p=0; 
+ 
+ return function (){p++; return p;};
+}
+undefined
+closure2()()
+1
+closure2()()
+1
+
+function closure2(){
+ var p=0; 
+ 
+ return function (){p += 1; return p;};
+}
+undefined
+closure2()()
+1
+closure2()()
+1
+var add = (function () {
+  var counter = 0;
+  return function () {counter += 1; return counter}
+})();
+undefined
+add()
+1
+add()
+2
+add()
+3
+
+function closure2(){
+ var p=0; 
+ 
+ return function (){p += 1; return p}
+}
+undefined
+closure2()()
+1
+closure2()()
+1
+var S= closure2();
+undefined
+S()
+2
+S()
+3
+S()
+4
